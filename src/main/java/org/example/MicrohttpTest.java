@@ -23,7 +23,7 @@ public class MicrohttpTest {
             .withPort(8080)
             .withConcurrency(Runtime.getRuntime().availableProcessors());
         Logger logger = new NoOpLogger();
-        EventLoop eventLoop = new EventLoop(options, handler);
+        EventLoop eventLoop = new EventLoop(options, logger, handler);
         eventLoop.start();
         eventLoop.join();
     }
